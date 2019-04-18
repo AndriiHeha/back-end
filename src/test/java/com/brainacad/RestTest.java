@@ -17,6 +17,7 @@ public class RestTest{
         String endpoint="/api/users";
 
         //TODO: Избавится он хедеров в тесте добавив методы с хедерами по умолчанию в класс HttpClientHelper
+
         //Создаём переменую headers типа Map
         Map<String, String> headers=new HashMap<>();
         //Добавляем в headers наш заголовок
