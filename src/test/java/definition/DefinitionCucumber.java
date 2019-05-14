@@ -6,16 +6,12 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.apache.http.HttpResponse;
 import org.junit.Assert;
-
 import java.io.IOException;
-
 
 public class DefinitionCucumber {
 
     private static String URL;
     private static HttpResponse response;
-
-
 
     @Given("I have server by url {string}")
     public void i_have_server_by_url(String url) {
@@ -39,17 +35,27 @@ public class DefinitionCucumber {
 
     }
 
-
     @Then("I get response body not null")
     public void iGetResponseBodyNotNull() throws IOException {
-        Assert.assertNotEquals("Body shouldn't be null", null, HttpClientHelper.getBodyFromResponse(response));
+         //Конвертируем входящий поток тела ответа в строку
+        String body=HttpClientHelper.getBodyFromResponse(response);
+        //System.out.println(body);
+        Assert.assertNotEquals("Body shouldn't be null", null, body);
+    }
+
+    @When("I send POST request on endpoint {string} and body request {string}")
+    public void iSendPOSTRequestOnEndpointAndBodyRequestNameMorpheusJobLeader(String endpoint, String requestBody) throws IOException {
+
+        response = HttpClientHelper.post(URL+endpoint,requestBody);
+        int statusCode = response.getStatusLine().getStatusCode();
+       // System.out.println("Response Code : " + statusCode);
+        Assert.assertEquals("Response status code should be 201", 201, statusCode);
     }
 
     @When("I send POST request on endpoint {string} and body {string}")
-    public void iSendPOSTRequestOnEndpointAndBodyNameMorpheusJobLeader(int statusCode) throws IOException {
-
-        Assert.assertEquals(String.format("Response status code should be %s", statusCode),
-                statusCode, response.getStatusLine().getStatusCode());
-
+    public void iSendPOSTRequestOnEndpointAndBodyNameMorpheusJobLeader(String endpoint,String requestBody) throws IOException {
+        response = HttpClientHelper.post(URL+endpoint,requestBody);
+        String body=HttpClientHelper.getBodyFromResponse(response);
+        Assert.assertNotEquals("Body shouldn't be null", null, body);
     }
 }
