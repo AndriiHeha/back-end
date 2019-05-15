@@ -9,7 +9,7 @@ import java.util.Map;
 
 
 public class RestTest{
-
+    /*
     private static final String URL="https://reqres.in/";
 
     @Test//GET метод
@@ -19,7 +19,7 @@ public class RestTest{
         //TODO: Избавится он хедеров в тесте добавив методы с хедерами по умолчанию в класс HttpClientHelper
 
         //Создаём переменую headers типа Map
-        Map<String, String> headers=new HashMap<>();
+        Map<String, String> headers=new HashMap();
         //Добавляем в headers наш заголовок
         headers.put("User-Agent", "My-Test-User-Agent");
 
@@ -39,7 +39,7 @@ public class RestTest{
 
         //TODO: Избавится он хедеров в тесте добавив методы с хедерами по умолчанию в класс HttpClientHelper
         //Создаём переменую headers типа Map
-        Map<String, String> headers=new HashMap<>();
+        Map<String, String> headers=new HashMap();
         //Добавляем в headers наш заголовок
         headers.put("User-Agent", "My-Test-User-Agent");
 
@@ -59,7 +59,7 @@ public class RestTest{
 
         //TODO: Избавится он хедеров в тесте добавив методы с хедерами по умолчанию в класс HttpClientHelper
         //Создаём переменую headers типа Map
-        Map<String, String> headers=new HashMap<>();
+        Map<String, String> headers=new HashMap();
         //Добавляем в headers наш заголовок
         headers.put("User-Agent", "My-Test-User-Agent");
 
@@ -82,7 +82,7 @@ public class RestTest{
 
         //TODO: Избавится он хедеров в тесте добавив методы с хедерами по умолчанию в класс HttpClientHelper
         //Создаём переменую headers типа Map
-        Map<String, String> headers=new HashMap<>();
+        Map<String, String> headers=new HashMap();
         //Добавляем в headers наш заголовок
         headers.put("User-Agent", "My-Test-User-Agent");
 
@@ -101,5 +101,5 @@ public class RestTest{
 
     //TODO: напишите по тесткейсу на каждый вариант запроса на сайте https://reqres.in
     //TODO: в тескейсах проверьте Result Code и несколько параметров из JSON ответа (если он есть)
-
+*/
 }

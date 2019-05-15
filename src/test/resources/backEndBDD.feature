@@ -4,17 +4,17 @@ Feature: My feature file
     Given I have server by url "https://reqres.in"
     When I send GET request on endpoint "/api/users" and parameters "page=2"
     Then I get response status code 200
-
+  @Smoke
   Scenario: Verify that GET response body not null
     Given I have server by url "https://reqres.in"
     When I send GET request on endpoint "/api/users" and parameters "page=2"
     Then I get response body not null
-
+  @Debug
   Scenario: Verify POST request status code
     Given I have server by url "https://reqres.in"
-    When I send POST request on endpoint "/api/users" and body request "{\"name\": \"morpheus\",\"job\": \"leader\"}"
+    When I send POST request on endpoint "/api/users" and body "{\"name\": \"morpheus\",\"job\": \"leader\"}"
     Then I get response status code 201
-
+  @Debug
   Scenario: Verify that Post response body not null
     Given I have server by url "https://reqres.in"
     When I send POST request on endpoint "/api/users" and body "{\"name\": \"morpheus\",\"job\": \"leader\"}"

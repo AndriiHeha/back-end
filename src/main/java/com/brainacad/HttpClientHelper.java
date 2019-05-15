@@ -21,7 +21,7 @@ public class HttpClientHelper {
        //Done already by agega
         //TODO: написать метод для GET запроса с хедерами по умолчанию
         //Создаём переменую headers типа Map
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> headers = new HashMap();
         //Добавляем в headers наш заголовок
         headers.put("User-Agent", "My-Test-User-Agent");
         return get(endpointUrl, parameters, headers);
@@ -49,7 +49,7 @@ public class HttpClientHelper {
     public static HttpResponse post(String endpointUrl, String parameters) throws IOException {
         //Done already by agega
         //TODO: написать метод для POST запроса с хедерами по умолчанию
-        Map<String, String> headers=new HashMap<>();
+        Map<String, String> headers=new HashMap();
         //Добавляем в headers наш заголовок
         headers.put("User-Agent", "My-Test-User-Agent");
 

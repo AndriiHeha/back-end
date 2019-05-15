@@ -43,19 +43,8 @@ public class DefinitionCucumber {
         Assert.assertNotEquals("Body shouldn't be null", null, body);
     }
 
-    @When("I send POST request on endpoint {string} and body request {string}")
-    public void iSendPOSTRequestOnEndpointAndBodyRequestNameMorpheusJobLeader(String endpoint, String requestBody) throws IOException {
-
-        response = HttpClientHelper.post(URL+endpoint,requestBody);
-        int statusCode = response.getStatusLine().getStatusCode();
-       // System.out.println("Response Code : " + statusCode);
-        Assert.assertEquals("Response status code should be 201", 201, statusCode);
-    }
-
     @When("I send POST request on endpoint {string} and body {string}")
-    public void iSendPOSTRequestOnEndpointAndBodyNameMorpheusJobLeader(String endpoint,String requestBody) throws IOException {
+    public void iSendPOSTRequestOnEndpointAndBody(String endpoint,String requestBody) throws IOException {
         response = HttpClientHelper.post(URL+endpoint,requestBody);
-        String body=HttpClientHelper.getBodyFromResponse(response);
-        Assert.assertNotEquals("Body shouldn't be null", null, body);
     }
 }
