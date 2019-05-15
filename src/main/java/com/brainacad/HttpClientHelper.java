@@ -77,7 +77,6 @@ public class HttpClientHelper {
         return response;
     }
 
-
     public static String getBodyFromResponse(HttpResponse response) throws IOException {
         //создаём ридер буффера и передаём в него входящий поток респонса
         BufferedReader rd = new BufferedReader(
